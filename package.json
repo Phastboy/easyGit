@@ -1,0 +1,22 @@
+{
+  "name": "easygit",
+  "version": "1.0.0",
+  "description": "git made easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phastboy/easyGit.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "Hammed Anuoluwapo Pelumi (Phastboy)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phastboy/easyGit/issues"
+  },
+  "homepage": "https://github.com/Phastboy/easyGit#readme"
+}
