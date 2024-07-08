@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/Phastboy/easyGit/issues"
   },
-  "homepage": "https://github.com/Phastboy/easyGit#readme"
+  "homepage": "https://github.com/Phastboy/easyGit#readme",
+  "dependencies": {
+    "colorette": "^2.0.20",
+    "commander": "^12.1.0",
+    "simple-git": "^3.25.0"
+  }
 }
