@@ -1,5 +1,6 @@
 const { getStatus } = require("../gitUtils/status");
 const { Command } = require("commander");
+const { red, green } = require("colorette");
 
 const log = console.log;
 
@@ -43,20 +44,25 @@ const statusCommand = program
     "List changes to be committed and changes not staged for commit, and untracked files",
   )
   .action(async () => {
-    const { untracked, readyToBeCommitted, unStagedObj } = await status();
+  const { untracked, readyToBeCommitted, unStagedObj } = await status();
 
-    if (untracked.files.length > 0) {
-      log(untracked.message, untracked.files);
-    }
+  const logList = (message, files, color) => {
+    log(message);
+    files.forEach((file, index) => log(color(`${index + 1}. ${file}`)));
+  };
 
-    if (readyToBeCommitted.files.length > 0) {
-      log(readyToBeCommitted.message, readyToBeCommitted.files);
-    }
+  if (untracked.files.length > 0) {
+    logList(untracked.message, untracked.files, red);
+  }
 
-    if (unStagedObj.files.length > 0) {
-      log(unStagedObj.message, unStagedObj.files);
-    }
-  });
+  if (readyToBeCommitted.files.length > 0) {
+    logList(readyToBeCommitted.message, readyToBeCommitted.files, green);
+  }
+
+  if (unStagedObj.files.length > 0) {
+    logList(unStagedObj.message, unStagedObj.files, red);
+  }
+});
 
 module.exports = { statusCommand };
 
