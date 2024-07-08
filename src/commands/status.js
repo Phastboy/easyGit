@@ -1,4 +1,4 @@
-const { getStatus } = require("../gitUtils/status");
+const { getStatus, hasChanges } = require("../gitUtils/status");
 const { Command } = require("commander");
 const { red, green } = require("colorette");
 
@@ -45,6 +45,11 @@ const statusCommand = program
   )
   .action(async () => {
   const { untracked, readyToBeCommitted, unStagedObj } = await status();
+
+  if(!hasChanges) {
+    log(green("nothing to commit, working tree clean"));
+    return;
+  }
 
   const logList = (message, files, color) => {
     log(message);
