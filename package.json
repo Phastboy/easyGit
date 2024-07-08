@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "git made easy",
   "main": "index.js",
+  "bin": {
+    "easyGit": "./index.js"
+  },
   "scripts": {
     "test": "jest"
   },
