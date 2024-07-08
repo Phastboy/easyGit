@@ -27,13 +27,10 @@ async function status() {
     files: [...unStaged],
   };
 
-  const hasChanges = files.length > 0;
-
   return {
     untracked,
     readyToBeCommitted,
     unStagedObj,
-    hasChanges,
   };
 }
 
@@ -46,8 +43,10 @@ const statusCommand = program
   .action(async () => {
   const { untracked, readyToBeCommitted, unStagedObj } = await status();
 
-  if(!hasChanges) {
+  const changes=await hasChanges();
+  if(!changes) {
     log(green("nothing to commit, working tree clean"));
+    log(await getStatus());
     return;
   }
 
