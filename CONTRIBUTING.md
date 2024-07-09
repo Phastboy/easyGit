@@ -32,7 +32,8 @@ Thank you for your interest in contributing to easyGit! This document provides g
 ## Setup and Installation
 
 For those looking to contribute to the CLI tool's setup and installation process, recent commits have introduced several key features:
-- A global installation script (`script.sh`) for the CLI tool using npm.
+
+- A global installation script (`install.sh`) for the CLI tool using _npm_.
 - Integration of CLI commands in the main entry point (`index.js`).
 - Addition of the `init` command to initialize new git repositories.
 

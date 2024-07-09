@@ -14,7 +14,7 @@ To install easyGit globally on your system, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Navigate to the repository directory.
-3. Run the installation script with `./src/scripts/script.sh`.
+3. Run the installation script with `./src/scripts/install.sh`.
 
 This script will install easyGit globally using npm, allowing you to access it from any directory.
 
