@@ -1,16 +1,11 @@
 const simpleGit = require("simple-git");
 const { Command } = require('commander');
 const  handleError = require('../utils/errorHandler');
-const { getStatus } = require("../gitUtils/status");
+const { hasStagedChanges } = require("../gitUtils/status");
 const { execSync } = require("child_process");
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
-
-async function hasStagedChanges() {
-    const { staged } = await getStatus();
-    return staged.length > 0;
-}
 
 // Get the commit message from the user
 async function getCommitMessage(options) {
